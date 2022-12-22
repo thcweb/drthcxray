@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 export LANG=en_US.UTF-8
 
@@ -119,7 +119,7 @@ download_xui(){
             exit 1
         fi
         yellow "The latest version of X-UI is detected: $ {last_version}, starting installation..."
-        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(archAffix).tar.gz https://github.com/thcweb/drthcxray/releases/download/${last_version}/x-ui-linux-$(archAffix).tar.gz
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(archAffix).tar.gz https://github.com/NidukaAkalanka/x-ui-english/releases/download/${last_version}/x-ui-linux-$(archAffix).tar.gz
         if [[ $? -ne 0 ]]; then
             red "Download the X-UI failure, please make sure your server can connect and download files from github"
             rm -f install.sh
@@ -127,7 +127,7 @@ download_xui(){
         fi
     else
         last_version=$1
-        url="https://github.com/thcweb/drthcxray/releases/download/${last_version}/x-ui-linux-$(archAffix).tar.gz"
+        url="https://github.com/NidukaAkalanka/x-ui-english/releases/download/${last_version}/x-ui-linux-$(archAffix).tar.gz"
         yellow "Starting installation x-ui $1"
         wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(archAffix).tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -213,7 +213,7 @@ install_xui() {
     rm -f install.sh
     green "X-UI v${last_version} Installation / Upgrade is Completed, The Panel has been Started"
     echo -e ""
-    echo -e "${GREEN} ----------------------------DrThC42---------------------------------  ${PLAIN}"
+    echo -e "${GREEN} --------------------------------------------------------------------  ${PLAIN}"
     echo -e "${GREEN}   __   __           _    _ _____    ______             _ _     _      ${PLAIN}"
     echo -e "${GREEN}   \ \ / /          | |  | |_   _|  |  ____|           | (_)   | |     ${PLAIN}"
     echo -e "${GREEN}    \ V /   ______  | |  | | | |    | |__   _ __   __ _| |_ ___| |__   ${PLAIN}"
@@ -222,7 +222,7 @@ install_xui() {
     echo -e "${GREEN}   /_/ \_\           \____/|_____|  |______|_| |_|\__, |_|_|___/_| |_| ${PLAIN}"
     echo -e "${GREEN}                                                  __/ |                ${PLAIN}"
     echo -e "${GREEN}                                                 |___/                 ${PLAIN}"
-    echo -e "${GREEN} ----------------------------DrThC42---------------------------------- ${PLAIN}"
+    echo -e "${GREEN} --------------------------------------------------------------------- ${PLAIN}"
     echo -e ""
     echo -e "------------------------------------------------------------------------------"
     echo -e "X-UI MANAGEMENT SCRIPT USAGE: "
@@ -243,7 +243,7 @@ install_xui() {
     echo -e "------------------------------------------------------------------------------"
     echo -e "Please do consider supporting authors"
     echo -e "------------------------------------------------------------------------------"
-    echo -e "DrThC42            -https://github.com/thcweb" 
+    echo -e "thcweb/drthcxray          - https://github.com/thcweb/drthcxray" 
     echo -e "taffychan         - https://github.com/taffychan"  
     echo -e "Hossin Asaadi     - https://github.com/hossinasaadi"
     echo -e "Yu FranzKafka     - https://github.com/FranzKafkaYu"
@@ -265,7 +265,6 @@ show_login_info(){
     fi
     echo -e "Username: ${GREEN}$config_account ${PLAIN}"
     echo -e "Password: ${GREEN}$config_password ${PLAIN}"
-    echo -e Green "Please Change UserNae And PasSwoRd : DrTHC Said"
 }
 
 install_xui $1
